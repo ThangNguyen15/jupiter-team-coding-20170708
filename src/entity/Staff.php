@@ -14,89 +14,42 @@ class Staff
 
     private $id;
     private $name;
-    private $mobile;
-    private $email;
-
+    private $age;
     public function __construct($arrayStaff = [])
     {
-        if (!empty($arrayStaff)) {
+        if (!empty($arrayStaff))
+        {
             $this
-                ->setName($arrayStaff['name'])
-                ->setEmail($arrayStaff['email'])
-                ->setMobile($arrayStaff['mobile']);
+                ->setId(isset($arrayStaff['id']) ? $arrayStaff['id'] : null)
+                ->setName(isset($arrayStaff['name']) ? $arrayStaff['name'] :'')
+                ->setAge(isset($arrayStaff['age']) ? $arrayStaff['age'] :'');
         }
     }
-
-    /**
-     * @return mixed
-     */
     public function getId()
     {
         return $this->id;
     }
-
-    /**
-     * @param mixed $id
-     * @return Staff
-     */
     public function setId($id)
     {
         $this->id = $id;
         return $this;
     }
-
-    /**
-     * @return mixed
-     */
     public function getName()
     {
         return $this->name;
     }
-
-    /**
-     * @param mixed $name
-     * @return Staff
-     */
     public function setName($name)
     {
         $this->name = $name;
         return $this;
     }
-
-    /**
-     * @return mixed
-     */
-    public function getMobile()
+    public function getAge()
     {
-        return $this->mobile;
+        return $this->age;
     }
-
-    /**
-     * @param mixed $mobile
-     * @return Staff
-     */
-    public function setMobile($mobile)
+    public function setAge($age)
     {
-        $this->mobile = $mobile;
+        $this->age = $age;
         return $this;
     }
-
-    /**
-     * @return mixed
-     */
-    public function getEmail()
-    {
-        return $this->email;
-    }
-
-    /**
-     * @param mixed $email
-     * @return Staff
-     */
-    public function setEmail($email)
-    {
-        $this->email = $email;
-        return $this;
-    }
-
 }
